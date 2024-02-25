@@ -24,5 +24,6 @@ interface Pen {
 
     fun moveTo(x: Coordinate, y: Coordinate)
     fun lineTo(x: Coordinate, y: Coordinate)
-    fun arcTo(rx: Coordinate, ry: Coordinate, angle: Int, outerArc: Boolean, x: Coordinate, y: Coordinate)
+    fun arcTo(rx: Coordinate, ry: Coordinate, angle: Int, outerArc: Boolean, toX: Coordinate, toY: Coordinate)
+    fun closeLine()
 }

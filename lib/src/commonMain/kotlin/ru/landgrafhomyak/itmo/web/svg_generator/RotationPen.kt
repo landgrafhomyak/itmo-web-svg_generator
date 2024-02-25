@@ -29,12 +29,16 @@ class RotationPen(
     override fun arcTo(
         rx: Pen.Coordinate, ry: Pen.Coordinate,
         angle: Int, outerArc: Boolean,
-        x: Pen.Coordinate, y: Pen.Coordinate
+        toX: Pen.Coordinate, toY: Pen.Coordinate
     ) {
         when (this.angle) {
-            Angle.ANGLE_90 -> this.original.arcTo(ry, rx, angle, outerArc, y, -x)
-            Angle.ANGLE_180 -> this.original.arcTo(rx, ry, angle, outerArc, -x, -y)
-            Angle.ANGLE_270 -> this.original.arcTo(ry, rx, angle, outerArc, -y, x)
+            Angle.ANGLE_90 -> this.original.arcTo(ry, rx, angle, outerArc, toY, -toX)
+            Angle.ANGLE_180 -> this.original.arcTo(rx, ry, angle, outerArc, -toX, -toY)
+            Angle.ANGLE_270 -> this.original.arcTo(ry, rx, angle, outerArc, -toY, toX)
         }
+    }
+
+    override fun closeLine() {
+        this.original.closeLine()
     }
 }

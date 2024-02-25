@@ -28,9 +28,18 @@ class GraphInfo(
     }
 
     fun draw(pen: Pen) {
+        if (this.topLeft == null)
+            pen.moveTo(Pen.Coordinate.ZERO, Pen.Coordinate.ZERO)
+        else {
+            if (this.topLeft.vSize)
+                pen.moveTo(Pen.Coordinate.ZERO, Pen.Coordinate.POS_FULL)
+            else
+                pen.moveTo(Pen.Coordinate.ZERO, Pen.Coordinate.POS_HALF)
+        }
         this.topRight.drawTopRight(pen)
         this.bottomRight.drawBottomRight(pen)
         this.bottomLeft.drawBottomLeft(pen)
         this.topLeft.drawBottomLeft(pen)
+        pen.closeLine()
     }
 }
