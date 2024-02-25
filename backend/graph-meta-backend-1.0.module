@@ -1,0 +1,113 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../graph-meta/1.0/graph-meta-1.0.module",
+    "group": "ru.landgrafhomyak.itmo.web",
+    "module": "graph-meta",
+    "version": "1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "backendApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "lib-backend-1.0.jar",
+          "url": "graph-meta-backend-1.0.jar",
+          "size": 27959,
+          "sha512": "3c2581b86366f852af206ee038e2eb63f3ac6dd22348532d214b642814c4e3ff87f0b7e4fcb0ff35f38fe2e6e30a215f9b6318cb307e403101ce64bcf3c34b16",
+          "sha256": "e05e787889ff10ba603e7b22af70209113f6924c3d4231eeae79e51b459f0636",
+          "sha1": "529c4540ac2b8a8f3cf436aa8ef4342836899f00",
+          "md5": "83db8a209ed36d753ee267457ce14581"
+        }
+      ]
+    },
+    {
+      "name": "backendRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "lib-backend-1.0.jar",
+          "url": "graph-meta-backend-1.0.jar",
+          "size": 27959,
+          "sha512": "3c2581b86366f852af206ee038e2eb63f3ac6dd22348532d214b642814c4e3ff87f0b7e4fcb0ff35f38fe2e6e30a215f9b6318cb307e403101ce64bcf3c34b16",
+          "sha256": "e05e787889ff10ba603e7b22af70209113f6924c3d4231eeae79e51b459f0636",
+          "sha1": "529c4540ac2b8a8f3cf436aa8ef4342836899f00",
+          "md5": "83db8a209ed36d753ee267457ce14581"
+        }
+      ]
+    },
+    {
+      "name": "backendSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "lib-backend-1.0-sources.jar",
+          "url": "graph-meta-backend-1.0-sources.jar",
+          "size": 5379,
+          "sha512": "8c2d5e668a73e48528831eb04d34b51f8399ea395eef1a69275bbc18937ea8c5e1a071d089e35228b95392923cdbb8c53575c9f2f8d2dcd63d50ce7bfa0538c3",
+          "sha256": "ba530206aed46085f147e654b13e81eb765878cb3ec99d970a709337e5f9c890",
+          "sha1": "b24122d8fdcd5032f0b855e3c512b6c90e42f719",
+          "md5": "9b9489ac2a6f14f1e420d20e740ffa10"
+        }
+      ]
+    }
+  ]
+}
