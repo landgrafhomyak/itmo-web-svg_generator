@@ -1,0 +1,8 @@
+/.idea/
+*.class
+*build*/
+/out/
+/kotlin-js-store/
+/gradlew*
+/gradle/
+/.gradle/
