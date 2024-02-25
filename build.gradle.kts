@@ -28,6 +28,10 @@ kotlin {
         }
 
         val browserMain by getting {
+            dependencies {
+                implementation(project(":lib"))
+
+            }
         }
         val browserTest by getting
     }

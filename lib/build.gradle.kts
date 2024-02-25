@@ -1,25 +1,18 @@
 plugins {
     kotlin("multiplatform") version "1.9.0"
+    `maven-publish`
 }
 
-group = "ru.landgrafhomyak.itmo"
-version = "1.0-SNAPSHOT"
+group = "ru.landgrafhomyak.itmo.web"
+version = "1.0"
 
 repositories {
     mavenCentral()
 }
 
 kotlin {
-    jvm () {}
-    js("browser") {
-        binaries.executable()
-        browser {
-            commonWebpackConfig {
-                outputFileName = "main.js"
-                outputPath = rootDir.resolve("out")
-            }
-        }
-    }
+    jvm("backend")
+    js("frontend")
     sourceSets {
         val commonMain by getting
         val commonTest by getting {
@@ -28,8 +21,9 @@ kotlin {
             }
         }
 
-        val browserMain by getting {
-        }
-        val browserTest by getting
     }
+}
+
+tasks.withType<AbstractPublishToMaven>().configureEach {
+    this.publication.artifactId = this.publication.artifactId.replace(Regex("""^${Regex.escape(project.name)}"""), "graph-meta")
 }
