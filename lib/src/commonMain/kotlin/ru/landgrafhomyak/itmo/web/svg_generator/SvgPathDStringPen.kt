@@ -16,8 +16,9 @@ class SvgPathDStringPen(
 
     private fun addLeadingSeparator() {
         if (this.isFirst) {
-            this.builder.append(' ')
             this.isFirst = false
+        } else {
+            this.builder.append(' ')
         }
     }
 
@@ -51,7 +52,7 @@ class SvgPathDStringPen(
 
     override fun arcTo(rx: Pen.Coordinate, ry: Pen.Coordinate, angle: Int, outerArc: Boolean, toX: Pen.Coordinate, toY: Pen.Coordinate) {
         this.addLeadingSeparator()
-        this.builder.append("A ${this._mapX(rx)} ${this._mapY(ry)} $angle 0 ${if (outerArc) "1" else "0"} ${this._mapX(toX)} ${this._mapY(toY)}")
+        this.builder.append("A ${this._mapX(rx.abs())} ${this._mapY(ry.abs())} $angle 0 ${if (outerArc) "1" else "0"} ${this._mapX(toX)} ${this._mapY(toY)}")
     }
 
     override fun closeLine() {

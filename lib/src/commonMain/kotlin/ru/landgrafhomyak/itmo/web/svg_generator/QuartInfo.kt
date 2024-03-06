@@ -115,12 +115,12 @@ sealed class QuartInfo(
 
         override fun drawTopRight(pen: Pen) {
             pen.lineTo(_zeroCoord, this._yPenCoord)
-            pen.arcTo(this._xPenCoord, this._yPenCoord, 90, true, this._xPenCoord, _zeroCoord)
+            pen.arcTo(this._xPenCoord.abs(), this._yPenCoord.abs(), 90, true, this._xPenCoord, _zeroCoord)
         }
 
         override fun drawBottomRight(pen: Pen) {
             pen.lineTo(this._xPenCoord, _zeroCoord)
-            pen.arcTo(this._yPenCoord, this._xPenCoord, 90, true, _zeroCoord, this._yPenCoord)
+            pen.arcTo(this._yPenCoord.abs(), this._xPenCoord.abs(), 90, true, _zeroCoord, this._yPenCoord)
         }
     }
 
@@ -134,11 +134,11 @@ sealed class QuartInfo(
 
         override fun drawTopRight(pen: Pen) {
             pen.lineTo(_zeroCoord, this._yPenCoord)
-            pen.arcTo(this._xPenCoord, this._yPenCoord, 90, false, this._xPenCoord, _zeroCoord)
+            pen.arcTo(this._xPenCoord.abs(), this._yPenCoord.abs(), 90, false, this._xPenCoord, _zeroCoord)
         }
         override fun drawBottomRight(pen: Pen) {
             pen.lineTo(this._xPenCoord, _zeroCoord)
-            pen.arcTo(this._yPenCoord, this._xPenCoord, 90, false, _zeroCoord, this._yPenCoord)
+            pen.arcTo(this._yPenCoord.abs(), this._xPenCoord.abs(), 90, false, _zeroCoord, this._yPenCoord)
         }
     }
 }
