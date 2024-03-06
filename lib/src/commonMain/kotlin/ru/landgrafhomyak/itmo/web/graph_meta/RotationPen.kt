@@ -1,4 +1,4 @@
-package ru.landgrafhomyak.itmo.web.svg_generator
+package ru.landgrafhomyak.itmo.web.graph_meta
 
 class RotationPen(
     private val original: Pen,

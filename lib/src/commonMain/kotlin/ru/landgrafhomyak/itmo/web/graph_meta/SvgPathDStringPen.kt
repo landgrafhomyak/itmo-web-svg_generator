@@ -1,4 +1,4 @@
-package ru.landgrafhomyak.itmo.web.svg_generator
+package ru.landgrafhomyak.itmo.web.graph_meta
 
 import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.InvocationKind

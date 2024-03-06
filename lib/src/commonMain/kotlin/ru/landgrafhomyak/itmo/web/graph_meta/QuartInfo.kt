@@ -1,6 +1,6 @@
 @file:Suppress("LiftReturnOrAssignment")
 
-package ru.landgrafhomyak.itmo.web.svg_generator
+package ru.landgrafhomyak.itmo.web.graph_meta
 
 import kotlin.jvm.JvmName
 import kotlin.math.sqrt
