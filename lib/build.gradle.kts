@@ -4,15 +4,21 @@ plugins {
 }
 
 group = "ru.landgrafhomyak.itmo.web"
-version = "2.0"
+version = "2.1"
 
 repositories {
     mavenCentral()
 }
 
 kotlin {
-    jvm("backend")
-    js("frontend"){
+    jvm("backend") {
+        jvmToolchain(8)
+        compilations.all {
+            kotlinOptions.jvmTarget = "1.8"
+        }
+    }
+
+    js("frontend") {
         binaries.executable()
         browser {
             commonWebpackConfig {
