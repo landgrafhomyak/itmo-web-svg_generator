@@ -122,7 +122,7 @@ sealed class QuartInfo(
             pen.lineTo(_zeroCoord, this._yPenCoord(invertWH))
             pen.arcTo(
                 this._xPenCoord(invertWH).abs(), this._yPenCoord(invertWH).abs(),
-                90, true,
+                0, true,
                 this._xPenCoord(invertWH), _zeroCoord
             )
         }
@@ -140,7 +140,7 @@ sealed class QuartInfo(
             pen.lineTo(_zeroCoord, this._yPenCoord(invertWH))
             pen.arcTo(
                 this._xPenCoord(invertWH).abs(), this._yPenCoord(invertWH).abs(),
-                90, false,
+                0, false,
                 this._xPenCoord(invertWH), _zeroCoord
             )
         }

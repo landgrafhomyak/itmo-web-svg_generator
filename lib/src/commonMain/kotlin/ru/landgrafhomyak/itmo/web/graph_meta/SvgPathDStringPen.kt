@@ -64,9 +64,9 @@ class SvgPathDStringPen(
         this.builder.append("L ${this._mapX(x)} ${this._mapY(y)}")
     }
 
-    override fun arcTo(rx: Pen.Coordinate, ry: Pen.Coordinate, angle: Int, outerArc: Boolean, toX: Pen.Coordinate, toY: Pen.Coordinate) {
+    override fun arcTo(rx: Pen.Coordinate, ry: Pen.Coordinate, rotation: Int, outerArc: Boolean, toX: Pen.Coordinate, toY: Pen.Coordinate) {
         this.addLeadingSeparator()
-        this.builder.append("A ${this._mapRadius(rx.abs(), this.rw)} ${this._mapRadius(ry.abs(), this.rh)} $angle 0 ${if (outerArc) "1" else "0"} ${this._mapX(toX)} ${this._mapY(toY)}")
+        this.builder.append("A ${this._mapRadius(rx.abs(), this.rw)} ${this._mapRadius(ry.abs(), this.rh)} $rotation 0 ${if (outerArc) "1" else "0"} ${this._mapX(toX)} ${this._mapY(toY)}")
     }
 
     override fun closeLine() {

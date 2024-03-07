@@ -28,13 +28,13 @@ class RotationPen(
 
     override fun arcTo(
         rx: Pen.Coordinate, ry: Pen.Coordinate,
-        angle: Int, outerArc: Boolean,
+        rotation: Int, outerArc: Boolean,
         toX: Pen.Coordinate, toY: Pen.Coordinate
     ) {
         when (this.angle) {
-            Angle.ANGLE_90 -> this.original.arcTo(ry, rx, angle, outerArc, toY, -toX)
-            Angle.ANGLE_180 -> this.original.arcTo(rx, ry, angle, outerArc, -toX, -toY)
-            Angle.ANGLE_270 -> this.original.arcTo(ry, rx, angle, outerArc, -toY, toX)
+            Angle.ANGLE_90 -> this.original.arcTo(ry, rx, rotation, outerArc, toY, -toX)
+            Angle.ANGLE_180 -> this.original.arcTo(rx, ry, rotation, outerArc, -toX, -toY)
+            Angle.ANGLE_270 -> this.original.arcTo(ry, rx, rotation, outerArc, -toY, toX)
         }
     }
 
