@@ -1,10 +1,10 @@
 {
   "formatVersion": "1.1",
   "component": {
-    "url": "../../graph-meta/1.0/graph-meta-1.0.module",
+    "url": "../../graph-meta/2.0/graph-meta-2.0.module",
     "group": "ru.landgrafhomyak.itmo.web",
     "module": "graph-meta",
-    "version": "1.0",
+    "version": "2.0",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -48,13 +48,13 @@
       ],
       "files": [
         {
-          "name": "lib-frontend-1.0.klib",
-          "url": "graph-meta-frontend-1.0.klib",
-          "size": 29264,
-          "sha512": "01192e7eda9bd5e1188571889623dec4f0b059e225161911eb0fb9802ef7b1b930c58e8a0f75ba97aa9f5f8430247bffdf12bf564ce291c86cb71e0d73ad16a0",
-          "sha256": "0a0bff1f6db9cdd857bd5e34df87e39fd3a82fc0286d03e9bcfaa398a5ae25b9",
-          "sha1": "643fc8eb73277e9c808a73d5897b5d635d4368ed",
-          "md5": "b7562b2707eff601242e7fd676275826"
+          "name": "lib-frontend-2.0.klib",
+          "url": "graph-meta-frontend-2.0.klib",
+          "size": 31051,
+          "sha512": "4dd5f46355521773798305f4af673ae4dbaac460c7a5e7def47a8612d9fb6991b3f5069f0264a8833a24a6233fa0574d4af06ed3aafea6d0d3324979ac5cbaf7",
+          "sha256": "3fd477a94767daebfb5d1fdcc894f0d0b20cffa2894cfeeec8aa63ef11905402",
+          "sha1": "a07ede17fd2b31efb2754fbaadbbbde117bcd0f7",
+          "md5": "aa7d81060098723945a495ee7f7fb273"
         }
       ]
     },
@@ -91,13 +91,13 @@
       ],
       "files": [
         {
-          "name": "lib-frontend-1.0.klib",
-          "url": "graph-meta-frontend-1.0.klib",
-          "size": 29264,
-          "sha512": "01192e7eda9bd5e1188571889623dec4f0b059e225161911eb0fb9802ef7b1b930c58e8a0f75ba97aa9f5f8430247bffdf12bf564ce291c86cb71e0d73ad16a0",
-          "sha256": "0a0bff1f6db9cdd857bd5e34df87e39fd3a82fc0286d03e9bcfaa398a5ae25b9",
-          "sha1": "643fc8eb73277e9c808a73d5897b5d635d4368ed",
-          "md5": "b7562b2707eff601242e7fd676275826"
+          "name": "lib-frontend-2.0.klib",
+          "url": "graph-meta-frontend-2.0.klib",
+          "size": 31051,
+          "sha512": "4dd5f46355521773798305f4af673ae4dbaac460c7a5e7def47a8612d9fb6991b3f5069f0264a8833a24a6233fa0574d4af06ed3aafea6d0d3324979ac5cbaf7",
+          "sha256": "3fd477a94767daebfb5d1fdcc894f0d0b20cffa2894cfeeec8aa63ef11905402",
+          "sha1": "a07ede17fd2b31efb2754fbaadbbbde117bcd0f7",
+          "md5": "aa7d81060098723945a495ee7f7fb273"
         }
       ]
     },
@@ -113,13 +113,13 @@
       },
       "files": [
         {
-          "name": "lib-frontend-1.0-sources.jar",
-          "url": "graph-meta-frontend-1.0-sources.jar",
-          "size": 5379,
-          "sha512": "8c2d5e668a73e48528831eb04d34b51f8399ea395eef1a69275bbc18937ea8c5e1a071d089e35228b95392923cdbb8c53575c9f2f8d2dcd63d50ce7bfa0538c3",
-          "sha256": "ba530206aed46085f147e654b13e81eb765878cb3ec99d970a709337e5f9c890",
-          "sha1": "b24122d8fdcd5032f0b855e3c512b6c90e42f719",
-          "md5": "9b9489ac2a6f14f1e420d20e740ffa10"
+          "name": "lib-frontend-2.0-sources.jar",
+          "url": "graph-meta-frontend-2.0-sources.jar",
+          "size": 5761,
+          "sha512": "5c9831d2f37a82f78fbca0918cf493948619106116186ff8cb1adf9b2072ded1b3fdcaa33ef48ab7f44682c4a4d089487aea7c32debbaf68df15519cdb893a57",
+          "sha256": "f8867d816e9afbb7eb2adf94c8e77a2cb681ca25cb0f06c5c932faf1b106c5db",
+          "sha1": "6642712175484bdc64a7910c96f4a7715316b906",
+          "md5": "c2a4606223e4550a36fb0e44cea40499"
         }
       ]
     }

@@ -25,7 +25,7 @@
       "platformType": "js",
       "extras": {
         "js": {
-          "isBrowserConfigured": false,
+          "isBrowserConfigured": true,
           "isNodejsConfigured": false
         }
       }
