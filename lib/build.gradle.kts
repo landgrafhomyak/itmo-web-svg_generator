@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "ru.landgrafhomyak.itmo.web"
-version = "1.0"
+version = "2.0"
 
 repositories {
     mavenCentral()
