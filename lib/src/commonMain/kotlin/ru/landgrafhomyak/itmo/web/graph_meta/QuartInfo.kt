@@ -43,26 +43,36 @@ sealed class QuartInfo(
         return this.checkTopRight(r, -x, -y)
     }
 
-    abstract fun drawTopRight(pen: Pen)
-
-    abstract fun drawBottomRight(pen: Pen)
-
-    fun drawTopLeft(pen: Pen) {
-        val rotatedPen = RotationPen(pen, RotationPen.Angle.ANGLE_180)
-        this.drawBottomRight(rotatedPen)
+    fun drawTopRight(pen: Pen) {
+        this._draw(pen, false)
     }
 
+    fun drawBottomRight(pen: Pen) {
+        val rotatedPen = RotationPen(pen, RotationPen.Angle.ANGLE_90)
+        this._draw(rotatedPen, true)
+
+    }
 
     fun drawBottomLeft(pen: Pen) {
         val rotatedPen = RotationPen(pen, RotationPen.Angle.ANGLE_180)
-        this.drawTopRight(rotatedPen)
+        this._draw(rotatedPen, false)
     }
 
-    @Suppress("PropertyName")
-    protected val _xPenCoord get() = if (this.hSize) Pen.Coordinate.POS_FULL else Pen.Coordinate.POS_HALF
 
-    @Suppress("PropertyName")
-    protected val _yPenCoord get() = if (this.vSize) Pen.Coordinate.POS_FULL else Pen.Coordinate.POS_HALF
+    fun drawTopLeft(pen: Pen) {
+        val rotatedPen = RotationPen(pen, RotationPen.Angle.ANGLE_270)
+        this._draw(rotatedPen, true)
+    }
+
+    @Suppress("FunctionName")
+    protected fun _xPenCoord(invertWH: Boolean) = if (if (!invertWH) this.hSize else this.vSize) Pen.Coordinate.POS_FULL else Pen.Coordinate.POS_HALF
+
+    @Suppress("FunctionName")
+    protected fun _yPenCoord(invertWH: Boolean) = if (if (!invertWH) this.vSize else this.hSize) Pen.Coordinate.POS_FULL else Pen.Coordinate.POS_HALF
+
+    @Suppress("FunctionName")
+    protected abstract fun _draw(pen: Pen, invertWH: Boolean)
+
 
     class Rectangle(hSize: Boolean, vSize: Boolean) : QuartInfo(hSize, vSize) {
         override fun checkTopRight(r: Double, x: Double, y: Double): Boolean {
@@ -72,16 +82,10 @@ sealed class QuartInfo(
             return true
         }
 
-        override fun drawTopRight(pen: Pen) {
-            pen.lineTo(_zeroCoord, this._yPenCoord)
-            pen.lineTo(this._xPenCoord, this._yPenCoord)
-            pen.lineTo(this._xPenCoord, _zeroCoord)
-        }
-
-        override fun drawBottomRight(pen: Pen) {
-            pen.lineTo(this._xPenCoord, _zeroCoord)
-            pen.lineTo(this._xPenCoord, -this._yPenCoord)
-            pen.lineTo(_zeroCoord, -this._yPenCoord)
+        override fun _draw(pen: Pen, invertWH: Boolean) {
+            pen.lineTo(_zeroCoord, this._yPenCoord(invertWH))
+            pen.lineTo(this._xPenCoord(invertWH), this._yPenCoord(invertWH))
+            pen.lineTo(this._xPenCoord(invertWH), _zeroCoord)
         }
     }
 
@@ -100,15 +104,11 @@ sealed class QuartInfo(
         }
 
 
-        override fun drawTopRight(pen: Pen) {
-            pen.lineTo(_zeroCoord, this._yPenCoord)
-            pen.lineTo(this._xPenCoord, _zeroCoord)
+        override fun _draw(pen: Pen, invertWH: Boolean) {
+            pen.lineTo(_zeroCoord, this._yPenCoord(invertWH))
+            pen.lineTo(this._xPenCoord(invertWH), _zeroCoord)
         }
 
-        override fun drawBottomRight(pen: Pen) {
-            pen.lineTo(this._xPenCoord, _zeroCoord)
-            pen.lineTo(_zeroCoord, -this._yPenCoord)
-        }
     }
 
     class OuterArc(hSize: Boolean, vSize: Boolean) : QuartInfo(hSize, vSize) {
@@ -118,14 +118,13 @@ sealed class QuartInfo(
             return y <= r * ((if (this.vSize) 1.0 else 0.5) * sqrt(1 - (if (this.hSize) 1 else 4) * (xx * xx)))
         }
 
-        override fun drawTopRight(pen: Pen) {
-            pen.lineTo(_zeroCoord, this._yPenCoord)
-            pen.arcTo(this._xPenCoord.abs(), this._yPenCoord.abs(), 90, true, this._xPenCoord, _zeroCoord)
-        }
-
-        override fun drawBottomRight(pen: Pen) {
-            pen.lineTo(this._xPenCoord, _zeroCoord)
-            pen.arcTo(this._yPenCoord.abs(), this._xPenCoord.abs(), 90, true, _zeroCoord, this._yPenCoord)
+        override fun _draw(pen: Pen, invertWH: Boolean) {
+            pen.lineTo(_zeroCoord, this._yPenCoord(invertWH))
+            pen.arcTo(
+                this._xPenCoord(invertWH).abs(), this._yPenCoord(invertWH).abs(),
+                90, true,
+                this._xPenCoord(invertWH), _zeroCoord
+            )
         }
     }
 
@@ -137,14 +136,13 @@ sealed class QuartInfo(
             return y <= r * (if (this.vSize) 1 - xk else 0.5 - 0.5 * xk)
         }
 
-        override fun drawTopRight(pen: Pen) {
-            pen.lineTo(_zeroCoord, this._yPenCoord)
-            pen.arcTo(this._xPenCoord.abs(), this._yPenCoord.abs(), 90, false, this._xPenCoord, _zeroCoord)
-        }
-
-        override fun drawBottomRight(pen: Pen) {
-            pen.lineTo(this._xPenCoord, _zeroCoord)
-            pen.arcTo(this._yPenCoord.abs(), this._xPenCoord.abs(), 90, false, _zeroCoord, this._yPenCoord)
+        override fun _draw(pen: Pen, invertWH: Boolean) {
+            pen.lineTo(_zeroCoord, this._yPenCoord(invertWH))
+            pen.arcTo(
+                this._xPenCoord(invertWH).abs(), this._yPenCoord(invertWH).abs(),
+                90, false,
+                this._xPenCoord(invertWH), _zeroCoord
+            )
         }
     }
 }
