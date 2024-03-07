@@ -45,7 +45,7 @@ class GraphInfo(
         this.topRight.drawTopRight(pen)
         this.bottomRight.drawBottomRight(pen)
         this.bottomLeft.drawBottomLeft(pen)
-        this.topLeft.drawBottomLeft(pen)
+        this.topLeft.drawTopLeft(pen)
         pen.closeLine()
     }
 }

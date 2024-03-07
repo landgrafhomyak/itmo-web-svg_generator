@@ -29,6 +29,15 @@ class SvgPathDStringPen(
     }
 
     @Suppress("FunctionName", "NOTHING_TO_INLINE")
+    private inline fun _mapRadius(coord: Pen.Coordinate, r: Double): Double = when (coord) {
+        Pen.Coordinate.NEG_FULL -> r
+        Pen.Coordinate.NEG_HALF -> r / 2
+        Pen.Coordinate.ZERO -> 0.0
+        Pen.Coordinate.POS_HALF -> r / 2
+        Pen.Coordinate.POS_FULL -> r
+    }
+
+    @Suppress("FunctionName", "NOTHING_TO_INLINE")
     private inline fun __mapCoord(coord: Pen.Coordinate, c: Double, r: Double) = when (coord) {
         Pen.Coordinate.NEG_FULL -> c - r
         Pen.Coordinate.NEG_HALF -> c - r / 2
@@ -36,7 +45,6 @@ class SvgPathDStringPen(
         Pen.Coordinate.POS_HALF -> c + r / 2
         Pen.Coordinate.POS_FULL -> c + r
     }
-
 
     @Suppress("FunctionName")
     private fun _mapX(coord: Pen.Coordinate): Double =
@@ -58,7 +66,7 @@ class SvgPathDStringPen(
 
     override fun arcTo(rx: Pen.Coordinate, ry: Pen.Coordinate, angle: Int, outerArc: Boolean, toX: Pen.Coordinate, toY: Pen.Coordinate) {
         this.addLeadingSeparator()
-        this.builder.append("A ${this._mapX(rx.abs())} ${this._mapY(ry.abs())} $angle 0 ${if (outerArc) "1" else "0"} ${this._mapX(toX)} ${this._mapY(toY)}")
+        this.builder.append("A ${this._mapRadius(rx.abs(), this.rw)} ${this._mapRadius(ry.abs(), this.rh)} $angle 0 ${if (outerArc) "1" else "0"} ${this._mapX(toX)} ${this._mapY(toY)}")
     }
 
     override fun closeLine() {
