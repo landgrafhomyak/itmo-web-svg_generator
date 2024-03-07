@@ -16,7 +16,7 @@ class GraphInfo(
     @Suppress("MemberVisibilityCanBePrivate")
     val topLeft: QuartInfo?,
 ) {
-    fun check(r: Double, x: Double, y: Double): Boolean {
+    fun check(x: Double, y: Double, r: Double): Boolean {
         when {
             x == 0.0 && y == 0.0 -> return this.topRight != null || this.bottomRight != null || this.bottomLeft != null || this.topLeft != null
             x == 0.0 && y > 0.0 -> return (this.topLeft != null || this.topRight != null) && (if ((this.topLeft?.vSize == true) || (this.topRight?.vSize == true)) y <= r else y <= r / 2)
@@ -25,10 +25,10 @@ class GraphInfo(
             x < 0.0 && y == 0.0 -> return (this.topLeft != null || this.bottomLeft != null) && (if ((this.topLeft?.vSize == true) || (this.bottomLeft?.vSize == true)) x >= -r else x >= -r / 2)
         }
         when {
-            x > 0.0 && y > 0.0 -> return this.topRight.checkTopRight(r, x, y)
-            x < 0.0 && y > 0.0 -> return this.topRight.checkTopLeft(r, x, y)
-            x > 0.0 && y < 0.0 -> return this.topRight.checkBottomRight(r, x, y)
-            x < 0.0 && y < 0.0 -> return this.topRight.checkBottomLeft(r, x, y)
+            x > 0.0 && y > 0.0 -> return this.topRight.checkTopRight(x, y, r)
+            x < 0.0 && y > 0.0 -> return this.topRight.checkTopLeft(x, y, r)
+            x > 0.0 && y < 0.0 -> return this.topRight.checkBottomRight(x, y, r)
+            x < 0.0 && y < 0.0 -> return this.topRight.checkBottomLeft(x, y, r)
         }
         return false
     }

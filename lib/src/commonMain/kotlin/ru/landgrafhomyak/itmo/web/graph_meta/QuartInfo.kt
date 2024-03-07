@@ -17,7 +17,7 @@ sealed class QuartInfo(
     val hSize: Boolean,
     val vSize: Boolean
 ) {
-    abstract fun checkTopRight(r: Double, x: Double, y: Double): Boolean
+    abstract fun checkTopRight(x: Double, y: Double, r: Double): Boolean
 
     @Suppress("FunctionName")
     protected fun _checkXYPositive(x: Double, y: Double) {
@@ -25,22 +25,22 @@ sealed class QuartInfo(
             throw IllegalArgumentException("X and Y must be positive to be checked in top-right quart")
     }
 
-    fun checkTopLeft(r: Double, x: Double, y: Double): Boolean {
+    fun checkTopLeft(x: Double, y: Double, r: Double): Boolean {
         if (x > 0 || y < 0)
             throw IllegalArgumentException("X must be negative and Y must be positive to be checked in top-left quart")
-        return this.checkTopRight(r, -x, y)
+        return this.checkTopRight(-x, y, r)
     }
 
-    fun checkBottomRight(r: Double, x: Double, y: Double): Boolean {
+    fun checkBottomRight(x: Double, y: Double, r: Double): Boolean {
         if (x > 0 || y < 0)
             throw IllegalArgumentException("X must be positive and Y must be negative to be checked in bottom-right quart")
-        return this.checkTopRight(r, x, -y)
+        return this.checkTopRight(x, -y, r)
     }
 
-    fun checkBottomLeft(r: Double, x: Double, y: Double): Boolean {
+    fun checkBottomLeft(x: Double, y: Double, r: Double): Boolean {
         if (x > 0 || y < 0)
             throw IllegalArgumentException("X and Y must be negative to be checked in bottom-left quart")
-        return this.checkTopRight(r, -x, -y)
+        return this.checkTopRight(-x, -y, r)
     }
 
     fun drawTopRight(pen: Pen) {
@@ -75,7 +75,7 @@ sealed class QuartInfo(
 
 
     class Rectangle(hSize: Boolean, vSize: Boolean) : QuartInfo(hSize, vSize) {
-        override fun checkTopRight(r: Double, x: Double, y: Double): Boolean {
+        override fun checkTopRight(x: Double, y: Double, r: Double): Boolean {
             this._checkXYPositive(x, y)
             if (x > (if (this.hSize) r else r / 2)) return false
             if (y > (if (this.vSize) r else r / 2)) return false
@@ -97,7 +97,7 @@ sealed class QuartInfo(
             else -> throw RuntimeException("Unreachable")
         }
 
-        override fun checkTopRight(r: Double, x: Double, y: Double): Boolean {
+        override fun checkTopRight(x: Double, y: Double, r: Double): Boolean {
             this._checkXYPositive(x, y)
             val c = (if (this.vSize) r else r / 2)
             return y <= this.k * x + c
@@ -112,7 +112,7 @@ sealed class QuartInfo(
     }
 
     class OuterArc(hSize: Boolean, vSize: Boolean) : QuartInfo(hSize, vSize) {
-        override fun checkTopRight(r: Double, x: Double, y: Double): Boolean {
+        override fun checkTopRight(x: Double, y: Double, r: Double): Boolean {
             this._checkXYPositive(x, y)
             val xx: Double = x / r
             return y <= r * ((if (this.vSize) 1.0 else 0.5) * sqrt(1 - (if (this.hSize) 1 else 4) * (xx * xx)))
@@ -129,7 +129,7 @@ sealed class QuartInfo(
     }
 
     class InnerArc(hSize: Boolean, vSize: Boolean) : QuartInfo(hSize, vSize) {
-        override fun checkTopRight(r: Double, x: Double, y: Double): Boolean {
+        override fun checkTopRight(x: Double, y: Double, r: Double): Boolean {
             this._checkXYPositive(x, y)
             val xx: Double = if (this.hSize) 1 - x / r else 0.5 - x / r
             val xk: Double = sqrt(1 - (if (this.hSize) 1 else 4) * (xx * xx))
@@ -148,27 +148,27 @@ sealed class QuartInfo(
 }
 
 @JvmName("checkTopRightNullable")
-fun QuartInfo?.checkTopRight(r: Double, x: Double, y: Double): Boolean {
+fun QuartInfo?.checkTopRight(x: Double, y: Double, r: Double): Boolean {
     if (this == null) return false
-    else return this.checkTopRight(r, x, y)
+    else return this.checkTopRight(x, y, r)
 }
 
 @JvmName("checkTopLeftNullable")
-fun QuartInfo?.checkTopLeft(r: Double, x: Double, y: Double): Boolean {
+fun QuartInfo?.checkTopLeft(x: Double, y: Double, r: Double): Boolean {
     if (this == null) return false
-    else return this.checkTopLeft(r, x, y)
+    else return this.checkTopLeft(x, y, r)
 }
 
 @JvmName("checkBottomRightNullable")
-fun QuartInfo?.checkBottomRight(r: Double, x: Double, y: Double): Boolean {
+fun QuartInfo?.checkBottomRight(x: Double, y: Double, r: Double): Boolean {
     if (this == null) return false
-    else return this.checkBottomRight(r, x, y)
+    else return this.checkBottomRight(x, y, r)
 }
 
 @JvmName("checkBottomLeftNullable")
-fun QuartInfo?.checkBottomLeft(r: Double, x: Double, y: Double): Boolean {
+fun QuartInfo?.checkBottomLeft(x: Double, y: Double, r: Double): Boolean {
     if (this == null) return false
-    else return this.checkBottomLeft(r, x, y)
+    else return this.checkBottomLeft(x, y, r)
 }
 
 @JvmName("drawTopRightNullable")
