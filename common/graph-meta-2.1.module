@@ -3,7 +3,7 @@
   "component": {
     "group": "ru.landgrafhomyak.itmo.web",
     "module": "graph-meta",
-    "version": "2.0",
+    "version": "2.1",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -32,13 +32,13 @@
       ],
       "files": [
         {
-          "name": "lib-metadata-2.0.jar",
-          "url": "graph-meta-2.0.jar",
-          "size": 6517,
-          "sha512": "77b4d8c729d4d4a46a9316e8b7d1e01e58440401156337eb8a43d374792685c21a1b8579617b35e2d6a57e8f675149b08543f1e68f00a05122a5565a7ecf4d2c",
-          "sha256": "559add8446f3509beb0ae12f1a72aca0c606a9c611b20986f3554bb615273115",
-          "sha1": "85cb6ef4439f2ffca7db1274f82c31cec7d86f72",
-          "md5": "794a22554cb6cd09ec4d5f5a4eb7cb5a"
+          "name": "lib-metadata-2.1.jar",
+          "url": "graph-meta-2.1.jar",
+          "size": 6519,
+          "sha512": "0ce322fb9c1a922e6536dbe2b252ff85a2c4acc6291d9a907ea5ea86fa0d7d5daa7c9ff182935385a300f0763b8ec15192fabc1aa1de475bf5878145f825af69",
+          "sha256": "5862ec3c49af3e72ae93feef835da258955e318fb7af1e7184305667be34e7c3",
+          "sha1": "772d7b4bf8bbeaee538efb54c506838407cca729",
+          "md5": "40baa7355208023ef2100b6cbd0eac3e"
         }
       ]
     },
@@ -53,13 +53,13 @@
       },
       "files": [
         {
-          "name": "lib-kotlin-2.0-sources.jar",
-          "url": "graph-meta-2.0-sources.jar",
-          "size": 5761,
-          "sha512": "5c9831d2f37a82f78fbca0918cf493948619106116186ff8cb1adf9b2072ded1b3fdcaa33ef48ab7f44682c4a4d089487aea7c32debbaf68df15519cdb893a57",
-          "sha256": "f8867d816e9afbb7eb2adf94c8e77a2cb681ca25cb0f06c5c932faf1b106c5db",
-          "sha1": "6642712175484bdc64a7910c96f4a7715316b906",
-          "md5": "c2a4606223e4550a36fb0e44cea40499"
+          "name": "lib-kotlin-2.1-sources.jar",
+          "url": "graph-meta-2.1-sources.jar",
+          "size": 5763,
+          "sha512": "e123ba3575c037459fd680e5c546aa419c44a4e251302d94abc16a1c73073b44bfc26bc1e0a277e44f50526d52209bc7ed48c66d7e49727688980ce99cd1f208",
+          "sha256": "6536c96d00b7f5f8e432bd996c9433767f8fc44edb1bd4e877b5aaa6e9441f31",
+          "sha1": "79214691d8905788ef89265d706f2cc0f1fddb86",
+          "md5": "20d924b796d87e9cdc35ec5316aed81a"
         }
       ]
     },
@@ -72,10 +72,10 @@
         "org.jetbrains.kotlin.platform.type": "jvm"
       },
       "available-at": {
-        "url": "../../graph-meta-backend/2.0/graph-meta-backend-2.0.module",
+        "url": "../../graph-meta-backend/2.1/graph-meta-backend-2.1.module",
         "group": "ru.landgrafhomyak.itmo.web",
         "module": "graph-meta-backend",
-        "version": "2.0"
+        "version": "2.1"
       }
     },
     {
@@ -87,10 +87,10 @@
         "org.jetbrains.kotlin.platform.type": "jvm"
       },
       "available-at": {
-        "url": "../../graph-meta-backend/2.0/graph-meta-backend-2.0.module",
+        "url": "../../graph-meta-backend/2.1/graph-meta-backend-2.1.module",
         "group": "ru.landgrafhomyak.itmo.web",
         "module": "graph-meta-backend",
-        "version": "2.0"
+        "version": "2.1"
       }
     },
     {
@@ -104,10 +104,10 @@
         "org.jetbrains.kotlin.platform.type": "jvm"
       },
       "available-at": {
-        "url": "../../graph-meta-backend/2.0/graph-meta-backend-2.0.module",
+        "url": "../../graph-meta-backend/2.1/graph-meta-backend-2.1.module",
         "group": "ru.landgrafhomyak.itmo.web",
         "module": "graph-meta-backend",
-        "version": "2.0"
+        "version": "2.1"
       }
     },
     {
@@ -119,10 +119,10 @@
         "org.jetbrains.kotlin.platform.type": "js"
       },
       "available-at": {
-        "url": "../../graph-meta-frontend/2.0/graph-meta-frontend-2.0.module",
+        "url": "../../graph-meta-frontend/2.1/graph-meta-frontend-2.1.module",
         "group": "ru.landgrafhomyak.itmo.web",
         "module": "graph-meta-frontend",
-        "version": "2.0"
+        "version": "2.1"
       }
     },
     {
@@ -134,10 +134,10 @@
         "org.jetbrains.kotlin.platform.type": "js"
       },
       "available-at": {
-        "url": "../../graph-meta-frontend/2.0/graph-meta-frontend-2.0.module",
+        "url": "../../graph-meta-frontend/2.1/graph-meta-frontend-2.1.module",
         "group": "ru.landgrafhomyak.itmo.web",
         "module": "graph-meta-frontend",
-        "version": "2.0"
+        "version": "2.1"
       }
     },
     {
@@ -151,10 +151,10 @@
         "org.jetbrains.kotlin.platform.type": "js"
       },
       "available-at": {
-        "url": "../../graph-meta-frontend/2.0/graph-meta-frontend-2.0.module",
+        "url": "../../graph-meta-frontend/2.1/graph-meta-frontend-2.1.module",
         "group": "ru.landgrafhomyak.itmo.web",
         "module": "graph-meta-frontend",
-        "version": "2.0"
+        "version": "2.1"
       }
     }
   ]
