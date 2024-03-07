@@ -2,12 +2,17 @@
 
 package ru.landgrafhomyak.itmo.web.graph_meta
 
+import kotlin.js.ExperimentalJsExport
+import kotlin.js.JsExport
 import kotlin.jvm.JvmName
 import kotlin.math.sqrt
 
 @Suppress("ObjectPropertyName")
 private val _zeroCoord get() = Pen.Coordinate.ZERO
 
+@Suppress("NON_EXPORTABLE_TYPE")
+@OptIn(ExperimentalJsExport::class)
+@JsExport
 sealed class QuartInfo(
     val hSize: Boolean,
     val vSize: Boolean
@@ -136,6 +141,7 @@ sealed class QuartInfo(
             pen.lineTo(_zeroCoord, this._yPenCoord)
             pen.arcTo(this._xPenCoord.abs(), this._yPenCoord.abs(), 90, false, this._xPenCoord, _zeroCoord)
         }
+
         override fun drawBottomRight(pen: Pen) {
             pen.lineTo(this._xPenCoord, _zeroCoord)
             pen.arcTo(this._yPenCoord.abs(), this._xPenCoord.abs(), 90, false, _zeroCoord, this._yPenCoord)

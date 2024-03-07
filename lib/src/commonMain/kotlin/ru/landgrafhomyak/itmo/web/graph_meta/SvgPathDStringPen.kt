@@ -3,8 +3,14 @@ package ru.landgrafhomyak.itmo.web.graph_meta
 import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
+import kotlin.js.ExperimentalJsExport
+import kotlin.js.JsExport
+import kotlin.js.JsName
 import kotlin.jvm.JvmStatic
 
+@OptIn(ExperimentalJsExport::class)
+@JsExport
+@Suppress("NON_EXPORTABLE_TYPE")
 class SvgPathDStringPen(
     private val cx: Double,
     private val cy: Double,
@@ -65,6 +71,7 @@ class SvgPathDStringPen(
     companion object {
         @OptIn(ExperimentalContracts::class)
         @JvmStatic
+        @JsName("_drawScoped")
         inline fun draw(cx: Double, cy: Double, rw: Double, rh: Double, scope: (Pen) -> Unit): String {
             contract {
                 callsInPlace(scope, InvocationKind.EXACTLY_ONCE)
@@ -76,6 +83,7 @@ class SvgPathDStringPen(
         }
 
         @JvmStatic
+        @JsName("draw")
         fun draw(cx: Double, cy: Double, rw: Double, rh: Double, graph: GraphInfo): String {
             val pen = SvgPathDStringPen(cx, cy, rw, rh)
             graph.draw(pen)

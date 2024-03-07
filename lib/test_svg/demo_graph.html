@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: "Comic Sans MS", monospace;
+        }
+
+
+        svg#graph {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            max-height: 50vh;
+        }
+
+
+        svg#graph line.axis, svg#graph polygon.axis {
+            stroke: #022;
+        }
+
+        svg#graph line.axis {
+            stroke-width: 1;
+
+        }
+
+        svg#graph text.axis {
+            font-family: monospace;
+            fill: #022;
+            font-size: 6px;
+        }
+
+        svg#graph text.axis.x {
+            alignment-baseline: text-before-edge;
+            text-anchor: middle;
+        }
+
+        svg#graph text.axis.y {
+            alignment-baseline: middle;
+            text-anchor: end;
+        }
+
+        svg#graph circle.point, svg#graph circle.miss, svg#graph circle.hit {
+            stroke: none;
+            fill: yellow;
+        }
+
+        svg#graph circle.point:target {
+            stroke: red;
+            stroke-width: 1;
+        }
+
+        svg#graph text.point {
+            alignment-baseline: text-after-edge;
+            text-anchor: start;
+            font-size: 6px;
+            fill: black;
+            font-weight: bold;
+            font-family: monospace;
+        }
+    </style>
+    <script src="graph.js" type="application/javascript">
+    </script>
+</head>
+<body>
+<svg viewBox="-150 -150 300 300" id="graph" style="aspect-ratio: 1; margin: auto; max-width: 500px;">
+    <g transform="scale(1,-1)">
+        <script type="application/javascript" id="path-generator">
+            let graphTools = lib.ru.landgrafhomyak.itmo.web.graph_meta
+            let graph = new graphTools.GraphInfo(
+                new graphTools.QuartInfo.Rectangle(true, true),
+                new graphTools.QuartInfo.Triangle(true, true),
+                new graphTools.QuartInfo.OuterArc(true, true),
+                new graphTools.QuartInfo.InnerArc(true, true),
+            )
+
+            let path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            path.setAttribute("fill", "#0ff")
+            path.setAttribute("d",  graphTools.SvgPathDStringPen.Companion.draw(0, 0, 100, 100, graph));
+
+            let placement = document.getElementById("path-generator")
+
+            placement.parentNode.insertBefore(path, placement.nextSibling)
+        </script>
+        <polygon points="-2,125 0,130 2,125" class="axis"></polygon>
+        <line x1="0" x2="0" y1="125" y2="-125" class="axis"></line>
+        <line x1="-2" x2="2" y1="100" y2="100" class="axis"></line>
+        <line x1="-2" x2="2" y1="50" y2="50" class="axis"></line>
+        <line x1="-2" x2="2" y1="0" y2="0" class="axis"></line>
+        <line x1="-2" x2="2" y1="-50" y2="-50" class="axis"></line>
+        <line x1="-2" x2="2" y1="-100" y2="-100" class="axis"></line>
+        <polygon points="125,-2 130,0 125,2" class="axis"></polygon>
+        <line y1="0" y2="0" x1="125" x2="-125" class="axis"></line>
+        <line y1="-2" y2="2" x1="100" x2="100" class="axis"></line>
+        <line y1="-2" y2="2" x1="50" x2="50" class="axis"></line>
+        <line y1="-2" y2="2" x1="0" x2="0" class="axis"></line>
+        <line y1="-2" y2="2" x1="-50" x2="-50" class="axis"></line>
+        <line y1="-2" y2="2" x1="-100" x2="-100" class="axis"></line>
+    </g>
+</svg>
+</body>
+</html>

@@ -1,5 +1,11 @@
 package ru.landgrafhomyak.itmo.web.graph_meta
 
+import kotlin.js.ExperimentalJsExport
+import kotlin.js.JsExport
+
+@OptIn(ExperimentalJsExport::class)
+@JsExport
+@Suppress("NON_EXPORTABLE_TYPE")
 class GraphInfo(
     @Suppress("MemberVisibilityCanBePrivate")
     val topRight: QuartInfo?,

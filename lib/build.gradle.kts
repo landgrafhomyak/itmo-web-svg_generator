@@ -12,7 +12,15 @@ repositories {
 
 kotlin {
     jvm("backend")
-    js("frontend")
+    js("frontend"){
+        binaries.executable()
+        browser {
+            commonWebpackConfig {
+                outputFileName = "graph.js"
+                outputPath = projectDir.resolve("test_svg")
+            }
+        }
+    }
     sourceSets {
         val commonMain by getting
         val commonTest by getting {
