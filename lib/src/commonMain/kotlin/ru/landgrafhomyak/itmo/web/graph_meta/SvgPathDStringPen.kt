@@ -7,6 +7,7 @@ import kotlin.js.ExperimentalJsExport
 import kotlin.js.JsExport
 import kotlin.js.JsName
 import kotlin.jvm.JvmStatic
+import kotlin.math.abs
 
 @OptIn(ExperimentalJsExport::class)
 @JsExport
@@ -19,6 +20,14 @@ class SvgPathDStringPen(
 ) : Pen {
     private val builder = StringBuilder()
     private var isFirst = true
+
+    private val _arcOuterInversion = when {
+        this.rh >= 0 && this.rw >= 0 -> true
+        this.rh <= 0 && this.rw >= 0 -> false
+        this.rh >= 0 && this.rw <= 0 -> false
+        this.rh <= 0 && this.rw <= 0 -> true
+        else -> throw RuntimeException("Unreachable")
+    }
 
     private fun addLeadingSeparator() {
         if (this.isFirst) {
@@ -66,7 +75,24 @@ class SvgPathDStringPen(
 
     override fun arcTo(rx: Pen.Coordinate, ry: Pen.Coordinate, rotation: Int, outerArc: Boolean, toX: Pen.Coordinate, toY: Pen.Coordinate) {
         this.addLeadingSeparator()
-        this.builder.append("A ${this._mapRadius(rx.abs(), this.rw)} ${this._mapRadius(ry.abs(), this.rh)} $rotation 0 ${if (outerArc) "1" else "0"} ${this._mapX(toX)} ${this._mapY(toY)}")
+        @Suppress("RemoveCurlyBracesFromTemplate")
+        this.builder.append(
+            "A ${
+                abs(this._mapRadius(rx.abs(), this.rw))
+            } ${
+                abs(this._mapRadius(ry.abs(), this.rh))
+            } ${
+                rotation
+            } ${
+                "0"
+            } ${
+                if (outerArc xor this._arcOuterInversion) "1" else "0"
+            } ${
+                this._mapX(toX)
+            } ${
+                this._mapY(toY)
+            }"
+        )
     }
 
     override fun closeLine() {
