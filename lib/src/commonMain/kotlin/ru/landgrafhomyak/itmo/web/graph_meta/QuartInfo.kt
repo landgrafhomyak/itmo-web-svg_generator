@@ -32,13 +32,13 @@ sealed class QuartInfo(
     }
 
     fun checkBottomRight(x: Double, y: Double, r: Double): Boolean {
-        if (x > 0 || y < 0)
+        if (x < 0 || y > 0)
             throw IllegalArgumentException("X must be positive and Y must be negative to be checked in bottom-right quart")
         return this.checkTopRight(x, -y, r)
     }
 
     fun checkBottomLeft(x: Double, y: Double, r: Double): Boolean {
-        if (x > 0 || y < 0)
+        if (x > 0 || y > 0)
             throw IllegalArgumentException("X and Y must be negative to be checked in bottom-left quart")
         return this.checkTopRight(-x, -y, r)
     }
