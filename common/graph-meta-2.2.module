@@ -3,7 +3,7 @@
   "component": {
     "group": "ru.landgrafhomyak.itmo.web",
     "module": "graph-meta",
-    "version": "2.1",
+    "version": "2.2",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -32,8 +32,8 @@
       ],
       "files": [
         {
-          "name": "lib-metadata-2.1.jar",
-          "url": "graph-meta-2.1.jar",
+          "name": "lib-metadata-2.2.jar",
+          "url": "graph-meta-2.2.jar",
           "size": 6519,
           "sha512": "0ce322fb9c1a922e6536dbe2b252ff85a2c4acc6291d9a907ea5ea86fa0d7d5daa7c9ff182935385a300f0763b8ec15192fabc1aa1de475bf5878145f825af69",
           "sha256": "5862ec3c49af3e72ae93feef835da258955e318fb7af1e7184305667be34e7c3",
@@ -53,13 +53,13 @@
       },
       "files": [
         {
-          "name": "lib-kotlin-2.1-sources.jar",
-          "url": "graph-meta-2.1-sources.jar",
-          "size": 5763,
-          "sha512": "e123ba3575c037459fd680e5c546aa419c44a4e251302d94abc16a1c73073b44bfc26bc1e0a277e44f50526d52209bc7ed48c66d7e49727688980ce99cd1f208",
-          "sha256": "6536c96d00b7f5f8e432bd996c9433767f8fc44edb1bd4e877b5aaa6e9441f31",
-          "sha1": "79214691d8905788ef89265d706f2cc0f1fddb86",
-          "md5": "20d924b796d87e9cdc35ec5316aed81a"
+          "name": "lib-kotlin-2.2-sources.jar",
+          "url": "graph-meta-2.2-sources.jar",
+          "size": 5768,
+          "sha512": "911ac6d2a2cd8563f351848f9b83f76ad950c9c0ad5fc773559bf28c68f982caaabb52325d97d30398c0d4fee77ef90d73c68c161d3d79023e19b237b07dbb67",
+          "sha256": "f80df889f5bd9ece1dded6b5363fc92586b7c6956820b61f6c5235a4d30374a9",
+          "sha1": "3577b3e3063106201af8ec9dd427dd33f6b8aeb8",
+          "md5": "77f87fbb501043f703045a62ac7ebd0e"
         }
       ]
     },
@@ -72,10 +72,10 @@
         "org.jetbrains.kotlin.platform.type": "jvm"
       },
       "available-at": {
-        "url": "../../graph-meta-backend/2.1/graph-meta-backend-2.1.module",
+        "url": "../../graph-meta-backend/2.2/graph-meta-backend-2.2.module",
         "group": "ru.landgrafhomyak.itmo.web",
         "module": "graph-meta-backend",
-        "version": "2.1"
+        "version": "2.2"
       }
     },
     {
@@ -87,10 +87,10 @@
         "org.jetbrains.kotlin.platform.type": "jvm"
       },
       "available-at": {
-        "url": "../../graph-meta-backend/2.1/graph-meta-backend-2.1.module",
+        "url": "../../graph-meta-backend/2.2/graph-meta-backend-2.2.module",
         "group": "ru.landgrafhomyak.itmo.web",
         "module": "graph-meta-backend",
-        "version": "2.1"
+        "version": "2.2"
       }
     },
     {
@@ -104,10 +104,10 @@
         "org.jetbrains.kotlin.platform.type": "jvm"
       },
       "available-at": {
-        "url": "../../graph-meta-backend/2.1/graph-meta-backend-2.1.module",
+        "url": "../../graph-meta-backend/2.2/graph-meta-backend-2.2.module",
         "group": "ru.landgrafhomyak.itmo.web",
         "module": "graph-meta-backend",
-        "version": "2.1"
+        "version": "2.2"
       }
     },
     {
@@ -119,10 +119,10 @@
         "org.jetbrains.kotlin.platform.type": "js"
       },
       "available-at": {
-        "url": "../../graph-meta-frontend/2.1/graph-meta-frontend-2.1.module",
+        "url": "../../graph-meta-frontend/2.2/graph-meta-frontend-2.2.module",
         "group": "ru.landgrafhomyak.itmo.web",
         "module": "graph-meta-frontend",
-        "version": "2.1"
+        "version": "2.2"
       }
     },
     {
@@ -134,10 +134,10 @@
         "org.jetbrains.kotlin.platform.type": "js"
       },
       "available-at": {
-        "url": "../../graph-meta-frontend/2.1/graph-meta-frontend-2.1.module",
+        "url": "../../graph-meta-frontend/2.2/graph-meta-frontend-2.2.module",
         "group": "ru.landgrafhomyak.itmo.web",
         "module": "graph-meta-frontend",
-        "version": "2.1"
+        "version": "2.2"
       }
     },
     {
@@ -151,10 +151,10 @@
         "org.jetbrains.kotlin.platform.type": "js"
       },
       "available-at": {
-        "url": "../../graph-meta-frontend/2.1/graph-meta-frontend-2.1.module",
+        "url": "../../graph-meta-frontend/2.2/graph-meta-frontend-2.2.module",
         "group": "ru.landgrafhomyak.itmo.web",
         "module": "graph-meta-frontend",
-        "version": "2.1"
+        "version": "2.2"
       }
     }
   ]
